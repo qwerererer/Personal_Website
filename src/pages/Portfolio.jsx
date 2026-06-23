@@ -1,26 +1,26 @@
 const projects = [
   {
-    title: '任务管理应用',
-    description: '一个全栈任务管理应用，支持实时更新、拖拽看板看板和团队协作功能。',
-    tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
+    title: '智能家居网关',
+    description: '基于 ARM Linux 的智能家居网关，支持 Zigbee/Z-Wave 设备接入、数据采集与云端同步。',
+    tags: ['C++', 'MQTT', 'Linux', 'Zigbee'],
     link: '#',
   },
   {
-    title: '电商平台',
-    description: '在线购物平台，包含商品搜索、购物车、支付集成和管理后台。',
-    tags: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
+    title: '工业数据采集系统',
+    description: '使用 C++ 开发的高性能工业数据采集系统，支持 Modbus/OPC UA 协议，实时处理万级数据点。',
+    tags: ['C++17', 'Modbus', 'OPC UA', 'SQLite'],
     link: '#',
   },
   {
-    title: '天气仪表盘',
-    description: '显示实时天气预报、历史数据和交互式图表的天气仪表盘。',
-    tags: ['React', 'D3.js', 'OpenWeather API'],
+    title: '嵌入式 RTOS 任务调度器',
+    description: '基于 FreeRTOS 实现的任务调度与内存管理组件，用于资源受限的 MCU 平台。',
+    tags: ['C', 'FreeRTOS', 'STM32', 'I2C/SPI'],
     link: '#',
   },
   {
-    title: '个人作品网站',
-    description: '使用 React 和 Vite 构建的个人作品集网站，支持响应式设计和流畅导航。',
-    tags: ['React', 'Vite', 'React Router'],
+    title: '边缘计算推理框架',
+    description: '在边缘设备上部署轻量级 AI 推理引擎，优化模型推理速度和内存占用。',
+    tags: ['C++', 'TensorFlow Lite', 'ONNX', 'ARM Neon'],
     link: '#',
   },
 ]
