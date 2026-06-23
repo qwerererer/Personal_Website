@@ -18,8 +18,8 @@ export default function Home() {
           追求简洁的代码、出色的设计和愉悦的用户体验。
         </p>
         <div className="hero-actions">
-          <Link to="/personal_-website/resume" className="btn btn-primary">查看简历</Link>
-          <Link to="/personal_-website/portfolio" className="btn btn-secondary">我的作品</Link>
+          <Link to="/Personal_Website/resume" className="btn btn-primary">查看简历</Link>
+          <Link to="/Personal_Website/portfolio" className="btn btn-secondary">我的作品</Link>
         </div>
       </section>
     </div>

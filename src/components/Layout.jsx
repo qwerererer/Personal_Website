@@ -6,9 +6,9 @@ export default function Layout({ children }) {
       <nav className="navbar">
         <div className="nav-brand">陈嘉辉</div>
         <div className="nav-links">
-          <NavLink to="/personal_-website/" end>首页</NavLink>
-          <NavLink to="/personal_-website/resume">简历</NavLink>
-          <NavLink to="/personal_-website/portfolio">作品集</NavLink>
+          <NavLink to="/Personal_Website/" end>首页</NavLink>
+          <NavLink to="/Personal_Website/resume">简历</NavLink>
+          <NavLink to="/Personal_Website/portfolio">作品集</NavLink>
         </div>
       </nav>
       <main className="main-content">{children}</main>
