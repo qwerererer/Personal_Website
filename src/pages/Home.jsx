@@ -11,11 +11,11 @@ export default function Home() {
             <ellipse cx="50" cy="68" rx="22" ry="16" fill="#4f46e5" />
           </svg>
         </div>
-        <h1>你好，我是陈嘉辉</h1>
-        <p className="tagline">全栈开发者 &amp; 创意思考者</p>
+        <h1>你好，我是陈家辉</h1>
+        <p className="tagline">C++ 开发工程师</p>
         <p className="bio">
-          我热衷于使用现代技术构建优雅、易用的 Web 应用。
-          追求简洁的代码、出色的设计和愉悦的用户体验。
+          热衷于使用 C++ 构建高性能、可靠的系统与应用。
+          对底层原理充满好奇，追求极致的代码质量与运行效率。
         </p>
         <div className="hero-actions">
           <Link to="/Personal_Website/resume" className="btn btn-primary">查看简历</Link>

@@ -7,11 +7,11 @@ export default function Resume() {
         <h2>教育背景</h2>
         <div className="resume-item">
           <div className="resume-item-header">
-            <h3>计算机科学 学士</h3>
+            <h3>计算机科学与技术 学士</h3>
             <span className="date">2019 - 2023</span>
           </div>
           <p className="subtitle">大学名称</p>
-          <p>主修课程：数据结构、算法、Web 开发、数据库系统</p>
+          <p>主修课程：数据结构与算法、操作系统、计算机网络、数据库系统</p>
         </div>
       </section>
 
@@ -19,25 +19,25 @@ export default function Resume() {
         <h2>工作经历</h2>
         <div className="resume-item">
           <div className="resume-item-header">
-            <h3>软件工程师</h3>
+            <h3>C++ 开发工程师</h3>
             <span className="date">2023 - 至今</span>
           </div>
           <p className="subtitle">公司名称</p>
           <ul>
-            <li>开发和维护基于 React 的 Web 应用，服务日均 1 万+ 用户</li>
-            <li>使用 Node.js 和 Express 设计 RESTful API</li>
-            <li>与跨职能团队协作，按时交付功能</li>
+            <li>使用 C++17/20 开发高性能后端服务，QPS 提升 40%</li>
+            <li>设计并实现分布式任务调度系统，支持百万级并发任务</li>
+            <li>优化内存管理，减少内存泄漏和碎片，降低 GC 停顿</li>
           </ul>
         </div>
         <div className="resume-item">
           <div className="resume-item-header">
-            <h3>前端开发实习生</h3>
+            <h3>C++ 开发实习生</h3>
             <span className="date">2022 - 2023</span>
           </div>
           <p className="subtitle">公司名称</p>
           <ul>
-            <li>使用 React 和 Tailwind CSS 构建响应式 UI 组件</li>
-            <li>通过代码分割和懒加载将页面加载性能提升 30%</li>
+            <li>参与内核模块开发，使用 C++ 实现 IPC 通信组件</li>
+            <li>编写单元测试和性能基准测试，覆盖率达 85% 以上</li>
           </ul>
         </div>
       </section>
@@ -46,16 +46,16 @@ export default function Resume() {
         <h2>技能</h2>
         <div className="skills-grid">
           <div className="skill-category">
-            <h3>前端</h3>
-            <p>React, Vue, JavaScript, TypeScript, HTML/CSS</p>
+            <h3>语言</h3>
+            <p>C/C++, Python, Java, JavaScript</p>
           </div>
           <div className="skill-category">
-            <h3>后端</h3>
-            <p>Node.js, Express, Python, PostgreSQL, MongoDB</p>
+            <h3>技术领域</h3>
+            <p>多线程编程, 网络编程, 内存管理, 性能调优</p>
           </div>
           <div className="skill-category">
             <h3>工具</h3>
-            <p>Git, Docker, AWS, Vite, Webpack</p>
+            <p>Git, CMake, GDB, Valgrind, Docker, Linux</p>
           </div>
         </div>
       </section>
