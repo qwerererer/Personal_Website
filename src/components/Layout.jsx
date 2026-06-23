@@ -4,7 +4,7 @@ export default function Layout({ children }) {
   return (
     <div className="layout">
       <nav className="navbar">
-        <div className="nav-brand">陈嘉辉</div>
+        <div className="nav-brand">陈家辉</div>
         <div className="nav-links">
           <NavLink to="/Personal_Website/" end>首页</NavLink>
           <NavLink to="/Personal_Website/resume">简历</NavLink>
@@ -13,7 +13,7 @@ export default function Layout({ children }) {
       </nav>
       <main className="main-content">{children}</main>
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} 陈嘉辉. 版权所有.</p>
+        <p>&copy; {new Date().getFullYear()} 陈家辉. 版权所有.</p>
       </footer>
     </div>
   )
