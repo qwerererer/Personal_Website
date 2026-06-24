@@ -27,32 +27,67 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <div className="page portfolio">
-      <h1>作品集</h1>
-      <p className="page-subtitle">以下是我参与过的一些项目。</p>
+    <div>
+      <h1 className="font-display font-extrabold text-4xl md:text-5xl tracking-tight mb-2">
+        作品集
+      </h1>
+      <p className="font-body text-muted text-base mb-10">
+        以下是我参与过的一些项目
+      </p>
 
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <div className="project-card-header">
-              <div className="project-icon">
-                <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project) => (
+          <div
+            key={project.title}
+            className="p-6 md:p-8 rounded-[32px] shadow-extruded bg-bg
+                        transition-all duration-300 ease-out
+                        hover:shadow-extruded-hover hover:-translate-y-1
+                        group"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-14 h-14 rounded-2xl shadow-inset-deep bg-bg flex items-center justify-center flex-shrink-0">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                   <polyline points="14 2 14 8 20 8" />
                   <line x1="16" y1="13" x2="8" y2="13" />
                   <line x1="16" y1="17" x2="8" y2="17" />
                 </svg>
               </div>
-              <h3>{project.title}</h3>
+              <h3 className="font-display font-bold text-lg text-fg">{project.title}</h3>
             </div>
-            <p>{project.description}</p>
-            <div className="project-tags">
-              {project.tags.map((tag, i) => (
-                <span key={i} className="tag">{tag}</span>
+
+            <p className="font-body text-sm text-muted leading-relaxed mb-5">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-5">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-block px-4 py-1.5 rounded-xl font-body text-xs font-medium text-muted
+                             shadow-inset-sm bg-bg"
+                >
+                  {tag}
+                </span>
               ))}
             </div>
-            <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
-              查看项目 &rarr;
+
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-body text-sm font-medium
+                         text-accent no-underline
+                         transition-all duration-300 ease-out
+                         hover:text-accent-light
+                         focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:outline-none
+                         rounded-xl px-3 py-1.5 -ml-1.5"
+            >
+              查看项目
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </a>
           </div>
         ))}
