@@ -1,8 +1,10 @@
-(function() {
-  if (typeof document === 'undefined') return
-  var app = null, bgContainer, fxContainer, bgList = [], trailList = [], burstList = []
-  var mouseX = -9999, mouseY = -9999, prevX = -9999, prevY = -9999
-  var BG_SIZE = 45, TRAIL_MAX = 100, BURST_MAX = 400
+/* eslint-disable no-undef, style/max-statements-per-line, vars-on-top, no-var, block-scoped-var, no-redeclare */
+(function () {
+  if (typeof document === 'undefined')
+    return
+  var app = null; var bgContainer; var fxContainer; var bgList = []; var trailList = []; var burstList = []
+  var mouseX = -9999; var mouseY = -9999; var prevX = -9999; var prevY = -9999
+  var BG_SIZE = 45; var TRAIL_MAX = 100; var BURST_MAX = 400
 
   function rand(n) { return Math.floor(Math.random() * n) }
 
@@ -38,7 +40,7 @@
         s.rotation = Math.random() * Math.PI * 2
         s.scale.set(0.3 + Math.random() * 0.5)
         bgContainer.addChild(s)
-        bgList.push({ s: s, rs: (Math.random() - 0.5) * 0.01, ph: Math.random() * Math.PI * 2 })
+        bgList.push({ s, rs: (Math.random() - 0.5) * 0.01, ph: Math.random() * Math.PI * 2 })
       }
     }
   }
@@ -51,7 +53,7 @@
     s.scale.set(0.5 + Math.random() * 0.8)
     s.rotation = Math.random() * Math.PI * 2
     fxContainer.addChild(s)
-    trailList.push({ s: s, life: 1, decay: 0.018 + Math.random() * 0.02, rs: (Math.random() - 0.5) * 0.04 })
+    trailList.push({ s, life: 1, decay: 0.018 + Math.random() * 0.02, rs: (Math.random() - 0.5) * 0.04 })
     if (trailList.length > TRAIL_MAX) {
       var o = trailList.shift()
       fxContainer.removeChild(o.s); o.s.destroy()
@@ -61,13 +63,13 @@
   function burstAt(x, y) {
     var n = 25 + rand(20)
     for (var i = 0; i < n; i++) {
-      var a = Math.PI * 2 * i / n, sp = 2 + Math.random() * 5
+      var a = Math.PI * 2 * i / n; var sp = 2 + Math.random() * 5
       var s = mkGeo(rand(4), 2 + Math.random() * 2, colors())
       s.x = x; s.y = y; s.alpha = 1
       s.scale.set(0.2 + Math.random() * 0.3)
       s.rotation = Math.random() * Math.PI * 2
       fxContainer.addChild(s)
-      burstList.push({ s: s, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 1, decay: 0.01 + Math.random() * 0.014, rs: (Math.random() - 0.5) * 0.06 })
+      burstList.push({ s, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 1, decay: 0.01 + Math.random() * 0.014, rs: (Math.random() - 0.5) * 0.06 })
       if (burstList.length > BURST_MAX) {
         var o = burstList.shift()
         fxContainer.removeChild(o.s); o.s.destroy()
@@ -92,13 +94,13 @@
 
     spawnBG()
 
-    document.addEventListener('mousemove', function(e) { mouseX = e.clientX; mouseY = e.clientY })
-    document.addEventListener('mouseleave', function() { mouseX = -9999; mouseY = -9999 })
-    document.addEventListener('click', function(e) { burstAt(e.clientX, e.clientY) })
-    window.addEventListener('resize', function() { app.renderer.resize(window.innerWidth, window.innerHeight) })
+    document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY })
+    document.addEventListener('mouseleave', () => { mouseX = -9999; mouseY = -9999 })
+    document.addEventListener('click', (e) => { burstAt(e.clientX, e.clientY) })
+    window.addEventListener('resize', () => { app.renderer.resize(window.innerWidth, window.innerHeight) })
 
     var tick = 0
-    app.ticker.add(function() {
+    app.ticker.add(() => {
       tick++; var t = tick * 0.02
       for (var i = 0; i < bgList.length; i++) {
         var p = bgList[i]
@@ -107,7 +109,7 @@
         p.s.scale.set(pl * (1 + Math.sin(t * 0.5 + p.ph * 2) * 0.1))
       }
       if (mouseX > 0 && mouseY > 0 && tick % 2 === 0) {
-        var dx = mouseX - prevX, dy = mouseY - prevY, dist = Math.sqrt(dx * dx + dy * dy)
+        var dx = mouseX - prevX; var dy = mouseY - prevY; var dist = Math.sqrt(dx * dx + dy * dy)
         if (dist > 5) {
           var steps = Math.min(Math.ceil(dist / 10), 4)
           for (var s = 0; s < steps; s++) { var f = (s + 1) / (steps + 1); spawnTrail(prevX + dx * f, prevY + dy * f) }
